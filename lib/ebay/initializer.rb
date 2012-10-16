@@ -3,7 +3,7 @@ module Ebay #:nodoc:
     def initialize(attributes = nil)
       super
       self.object_attributes = attributes
-      yield self if block_given? 
+      yield self if block_given?
     end
 
     def object_attributes=(new_attributes)
