@@ -39,7 +39,7 @@ module Ebay #:nodoc:
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
 
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
-    cattr_accessor :dev_id, :app_id, :cert, :auth_token
+    cattr_accessor :dev_id, :app_id, :cert, :auth_token, :runame
     cattr_accessor :username, :password
     attr_reader :auth_token, :site_id
 
@@ -73,6 +73,7 @@ module Ebay #:nodoc:
     #    ebay.dev_id = 'YOUR DEVELOPER ID HERE'
     #    ebay.app_id = 'YOUR APPLICATION ID HERE'
     #    ebay.cert = 'YOUR CERTIFICATE HERE'
+    #    ebay.runame = 'APPLICATION RUNAME'
     #
     #  # The default environment is the production environment
     #  # Override by setting use_sandbox to true
@@ -97,6 +98,10 @@ module Ebay #:nodoc:
 
     def cert
       self.class.cert
+    end
+
+    def runame
+      self.class.runame
     end
 
     # With no options, the default is to use the default site_id and the default
@@ -180,10 +185,10 @@ module Ebay #:nodoc:
         # Fixes the wrong case of API returned by eBay
         fix_root_element_name(xml)
         result = XML::Mapping.load_object_from_xml(xml.root)
-        case result.ack
-        when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
-          raise RequestError.new(result.errors)
-        end
+#        case result.ack
+#        when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
+#          raise RequestError.new(result.errors)
+#        end
       when :raw
         result = content
       else
