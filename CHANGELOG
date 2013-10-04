@@ -1,3 +1,4 @@
+* Update to schema version 841
 * Update to schema version 789
 * Update to schema version 727
 * Still return the stylesheet in XslFile even when the regex doesn't match

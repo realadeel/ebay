@@ -18,6 +18,8 @@ module Ebay # :nodoc:
     #  boolean_node :show_seller_profile_preferences, 'ShowSellerProfilePreferences', 'true', 'false'
     #  boolean_node :show_seller_return_preferences, 'ShowSellerReturnPreferences', 'true', 'false', :optional => true
     #  boolean_node :show_global_shipping_program_preference, 'ShowGlobalShippingProgramPreference', 'true', 'false', :optional => true
+    #  boolean_node :show_dispatch_cutoff_time_preferences, 'ShowDispatchCutoffTimePreferences', 'true', 'false', :optional => true
+    #  boolean_node :show_global_shipping_program_listing_preference, 'ShowGlobalShippingProgramListingPreference', 'true', 'false', :optional => true
     class GetUserPreferences < Abstract
       include XML::Mapping
       include Initializer
@@ -38,6 +40,8 @@ module Ebay # :nodoc:
       boolean_node :show_seller_profile_preferences, 'ShowSellerProfilePreferences', 'true', 'false'
       boolean_node :show_seller_return_preferences, 'ShowSellerReturnPreferences', 'true', 'false', :optional => true
       boolean_node :show_global_shipping_program_preference, 'ShowGlobalShippingProgramPreference', 'true', 'false', :optional => true
+      boolean_node :show_dispatch_cutoff_time_preferences, 'ShowDispatchCutoffTimePreferences', 'true', 'false', :optional => true
+      boolean_node :show_global_shipping_program_listing_preference, 'ShowGlobalShippingProgramListingPreference', 'true', 'false', :optional => true
     end
   end
 end

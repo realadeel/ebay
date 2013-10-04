@@ -15,6 +15,9 @@ require 'ebay/types/payment_hold_detail'
 require 'ebay/types/seller_discounts'
 require 'ebay/types/multi_leg_shipping_details'
 require 'ebay/types/unpaid_item'
+require 'ebay/types/payments_information'
+require 'ebay/types/pickup_options'
+require 'ebay/types/pickup_method_selected'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -60,6 +63,7 @@ module Ebay # :nodoc:
     #  money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
     #  object_node :variation, 'Variation', :class => Variation, :optional => true
     #  text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
+    #  money_node :total_transaction_price, 'TotalTransactionPrice', :optional => true
     #  object_node :taxes, 'Taxes', :class => Taxes, :optional => true
     #  boolean_node :bundle_purchase, 'BundlePurchase', 'true', 'false', :optional => true
     #  money_node :actual_shipping_cost, 'ActualShippingCost', :optional => true
@@ -75,6 +79,9 @@ module Ebay # :nodoc:
     #  time_node :invoice_sent_time, 'InvoiceSentTime', :optional => true
     #  object_node :unpaid_item, 'UnpaidItem', :class => UnpaidItem, :optional => true
     #  boolean_node :intangible_item, 'IntangibleItem', 'true', 'false', :optional => true
+    #  object_node :monetary_details, 'MonetaryDetails', :class => PaymentsInformation, :optional => true
+    #  array_node :pickup_details, 'PickupDetails', 'PickupOptions', :class => PickupOptions, :default_value => []
+    #  object_node :pickup_method_selected, 'PickupMethodSelected', :class => PickupMethodSelected, :optional => true
     class Transaction
       include XML::Mapping
       include Initializer
@@ -120,6 +127,7 @@ module Ebay # :nodoc:
       money_node :buyer_guarantee_price, 'BuyerGuaranteePrice', :optional => true
       object_node :variation, 'Variation', :class => Variation, :optional => true
       text_node :buyer_checkout_message, 'BuyerCheckoutMessage', :optional => true
+      money_node :total_transaction_price, 'TotalTransactionPrice', :optional => true
       object_node :taxes, 'Taxes', :class => Taxes, :optional => true
       boolean_node :bundle_purchase, 'BundlePurchase', 'true', 'false', :optional => true
       money_node :actual_shipping_cost, 'ActualShippingCost', :optional => true
@@ -135,6 +143,9 @@ module Ebay # :nodoc:
       time_node :invoice_sent_time, 'InvoiceSentTime', :optional => true
       object_node :unpaid_item, 'UnpaidItem', :class => UnpaidItem, :optional => true
       boolean_node :intangible_item, 'IntangibleItem', 'true', 'false', :optional => true
+      object_node :monetary_details, 'MonetaryDetails', :class => PaymentsInformation, :optional => true
+      array_node :pickup_details, 'PickupDetails', 'PickupOptions', :class => PickupOptions, :default_value => []
+      object_node :pickup_method_selected, 'PickupMethodSelected', :class => PickupMethodSelected, :optional => true
     end
   end
 end

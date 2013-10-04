@@ -10,6 +10,7 @@ require 'ebay/types/seller_exclude_ship_to_location_preferences'
 require 'ebay/types/purchase_reminder_email_preferences'
 require 'ebay/types/seller_profile_preferences'
 require 'ebay/types/seller_return_preferences'
+require 'ebay/types/dispatch_cutoff_time_preferences'
 
 module Ebay # :nodoc:
   module Responses # :nodoc:
@@ -30,6 +31,8 @@ module Ebay # :nodoc:
     #  object_node :seller_profile_preferences, 'SellerProfilePreferences', :class => SellerProfilePreferences, :optional => true
     #  object_node :seller_return_preferences, 'SellerReturnPreferences', :class => SellerReturnPreferences, :optional => true
     #  boolean_node :offer_global_shipping_program_preference, 'OfferGlobalShippingProgramPreference', 'true', 'false', :optional => true
+    #  object_node :dispatch_cutoff_time_preference, 'DispatchCutoffTimePreference', :class => DispatchCutoffTimePreferences, :optional => true
+    #  boolean_node :global_shipping_program_listing_preference, 'GlobalShippingProgramListingPreference', 'true', 'false', :optional => true
     class GetUserPreferences < Abstract
       include XML::Mapping
       include Initializer
@@ -50,6 +53,8 @@ module Ebay # :nodoc:
       object_node :seller_profile_preferences, 'SellerProfilePreferences', :class => SellerProfilePreferences, :optional => true
       object_node :seller_return_preferences, 'SellerReturnPreferences', :class => SellerReturnPreferences, :optional => true
       boolean_node :offer_global_shipping_program_preference, 'OfferGlobalShippingProgramPreference', 'true', 'false', :optional => true
+      object_node :dispatch_cutoff_time_preference, 'DispatchCutoffTimePreference', :class => DispatchCutoffTimePreferences, :optional => true
+      boolean_node :global_shipping_program_listing_preference, 'GlobalShippingProgramListingPreference', 'true', 'false', :optional => true
     end
   end
 end

@@ -129,6 +129,7 @@ module Ebay # :nodoc:
     #  boolean_node :seller_provided_title_supported, 'SellerProvidedTitleSupported', 'true', 'false', :optional => true
     #  boolean_node :deposit_supported, 'DepositSupported', 'true', 'false', :optional => true
     #  boolean_node :global_shipping_enabled, 'GlobalShippingEnabled', 'true', 'false', :optional => true
+    #  boolean_node :additional_compatibility_enabled, 'AdditionalCompatibilityEnabled', 'true', 'false', :optional => true
     class CategoryFeature
       include XML::Mapping
       include Initializer
@@ -256,6 +257,7 @@ module Ebay # :nodoc:
       boolean_node :seller_provided_title_supported, 'SellerProvidedTitleSupported', 'true', 'false', :optional => true
       boolean_node :deposit_supported, 'DepositSupported', 'true', 'false', :optional => true
       boolean_node :global_shipping_enabled, 'GlobalShippingEnabled', 'true', 'false', :optional => true
+      boolean_node :additional_compatibility_enabled, 'AdditionalCompatibilityEnabled', 'true', 'false', :optional => true
     end
   end
 end

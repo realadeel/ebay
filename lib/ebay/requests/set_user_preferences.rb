@@ -6,6 +6,7 @@ require 'ebay/types/seller_favorite_item_preferences'
 require 'ebay/types/end_of_auction_email_preferences'
 require 'ebay/types/unpaid_item_assistance_preferences'
 require 'ebay/types/purchase_reminder_email_preferences'
+require 'ebay/types/dispatch_cutoff_time_preferences'
 
 module Ebay # :nodoc:
   module Requests # :nodoc:
@@ -21,6 +22,8 @@ module Ebay # :nodoc:
     #  object_node :unpaid_item_assistance_preferences, 'UnpaidItemAssistancePreferences', :class => UnpaidItemAssistancePreferences, :optional => true
     #  object_node :purchase_reminder_email_preferences, 'PurchaseReminderEmailPreferences', :class => PurchaseReminderEmailPreferences, :optional => true
     #  boolean_node :seller_third_party_checkout_disabled, 'SellerThirdPartyCheckoutDisabled', 'true', 'false', :optional => true
+    #  object_node :dispatch_cutoff_time_preference, 'DispatchCutoffTimePreference', :class => DispatchCutoffTimePreferences, :optional => true
+    #  boolean_node :global_shipping_program_listing_preference, 'GlobalShippingProgramListingPreference', 'true', 'false', :optional => true
     class SetUserPreferences < Abstract
       include XML::Mapping
       include Initializer
@@ -36,6 +39,8 @@ module Ebay # :nodoc:
       object_node :unpaid_item_assistance_preferences, 'UnpaidItemAssistancePreferences', :class => UnpaidItemAssistancePreferences, :optional => true
       object_node :purchase_reminder_email_preferences, 'PurchaseReminderEmailPreferences', :class => PurchaseReminderEmailPreferences, :optional => true
       boolean_node :seller_third_party_checkout_disabled, 'SellerThirdPartyCheckoutDisabled', 'true', 'false', :optional => true
+      object_node :dispatch_cutoff_time_preference, 'DispatchCutoffTimePreference', :class => DispatchCutoffTimePreferences, :optional => true
+      boolean_node :global_shipping_program_listing_preference, 'GlobalShippingProgramListingPreference', 'true', 'false', :optional => true
     end
   end
 end

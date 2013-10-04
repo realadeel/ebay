@@ -84,6 +84,7 @@ module Ebay # :nodoc:
       ReadyToShip = 'ReadyToShip'
       ReadyForPayout = 'ReadyForPayout'
       BidItemEndingSoon = 'BidItemEndingSoon'
+      ShoppingCartItemEndingSoon = 'ShoppingCartItemEndingSoon'
       ReturnCreated = 'ReturnCreated'
       ReturnWaitingForSellerInfo = 'ReturnWaitingForSellerInfo'
       ReturnSellerInfoOverdue = 'ReturnSellerInfoOverdue'

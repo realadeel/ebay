@@ -10,6 +10,10 @@ module Ebay # :nodoc:
       SetupPayoutMethod = 'SetupPayoutMethod'
       UpdatePayoutMethod = 'UpdatePayoutMethod'
       None = 'None'
+      UploadTrackingInfo = 'UploadTrackingInfo'
+      ResolveBuyerMessageInr = 'ResolveBuyerMessageInr'
+      ResolveBuyerMessageSnad = 'ResolveBuyerMessageSnad'
+      ResolveReturn = 'ResolveReturn'
     end
   end
 end

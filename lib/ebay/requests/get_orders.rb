@@ -14,6 +14,7 @@ module Ebay # :nodoc:
     #  time_node :mod_time_to, 'ModTimeTo', :optional => true
     #  numeric_node :number_of_days, 'NumberOfDays', :optional => true
     #  boolean_node :include_final_value_fee, 'IncludeFinalValueFee', 'true', 'false', :optional => true
+    #  text_node :sorting_order, 'SortingOrder', :optional => true
     class GetOrders < Abstract
       include XML::Mapping
       include Initializer
@@ -29,6 +30,7 @@ module Ebay # :nodoc:
       time_node :mod_time_to, 'ModTimeTo', :optional => true
       numeric_node :number_of_days, 'NumberOfDays', :optional => true
       boolean_node :include_final_value_fee, 'IncludeFinalValueFee', 'true', 'false', :optional => true
+      text_node :sorting_order, 'SortingOrder', :optional => true
     end
   end
 end

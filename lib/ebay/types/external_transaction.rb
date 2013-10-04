@@ -6,6 +6,7 @@ module Ebay # :nodoc:
     #  time_node :external_transaction_time, 'ExternalTransactionTime', :optional => true
     #  money_node :fee_or_credit_amount, 'FeeOrCreditAmount', :optional => true
     #  money_node :payment_or_refund_amount, 'PaymentOrRefundAmount', :optional => true
+    #  text_node :external_transaction_status, 'ExternalTransactionStatus', :optional => true
     class ExternalTransaction
       include XML::Mapping
       include Initializer
@@ -14,6 +15,7 @@ module Ebay # :nodoc:
       time_node :external_transaction_time, 'ExternalTransactionTime', :optional => true
       money_node :fee_or_credit_amount, 'FeeOrCreditAmount', :optional => true
       money_node :payment_or_refund_amount, 'PaymentOrRefundAmount', :optional => true
+      text_node :external_transaction_status, 'ExternalTransactionStatus', :optional => true
     end
   end
 end

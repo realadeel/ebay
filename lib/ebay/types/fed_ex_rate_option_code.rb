@@ -5,6 +5,7 @@ module Ebay # :nodoc:
       extend Enumeration
       FedExStandardList = 'FedExStandardList'
       FedExCounter = 'FedExCounter'
+      FedExDiscounted = 'FedExDiscounted'
     end
   end
 end

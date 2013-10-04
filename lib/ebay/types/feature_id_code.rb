@@ -124,6 +124,7 @@ module Ebay # :nodoc:
       SellerProvidedTitleSupported = 'SellerProvidedTitleSupported'
       DepositSupported = 'DepositSupported'
       GlobalShippingEnabled = 'GlobalShippingEnabled'
+      AdditionalCompatibilityEnabled = 'AdditionalCompatibilityEnabled'
     end
   end
 end

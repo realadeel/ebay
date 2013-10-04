@@ -20,6 +20,7 @@ module Ebay # :nodoc:
     #  object_node :promotional_sale_details, 'PromotionalSaleDetails', :class => PromotionalSaleDetails, :optional => true
     #  boolean_node :admin_ended, 'AdminEnded', 'true', 'false', :optional => true
     #  boolean_node :sold_as_bin, 'SoldAsBin', 'true', 'false', :optional => true
+    #  numeric_node :quantity_sold_by_pickup_in_store, 'QuantitySoldByPickupInStore', :optional => true
     class SellingStatus
       include XML::Mapping
       include Initializer
@@ -40,6 +41,7 @@ module Ebay # :nodoc:
       object_node :promotional_sale_details, 'PromotionalSaleDetails', :class => PromotionalSaleDetails, :optional => true
       boolean_node :admin_ended, 'AdminEnded', 'true', 'false', :optional => true
       boolean_node :sold_as_bin, 'SoldAsBin', 'true', 'false', :optional => true
+      numeric_node :quantity_sold_by_pickup_in_store, 'QuantitySoldByPickupInStore', :optional => true
     end
   end
 end

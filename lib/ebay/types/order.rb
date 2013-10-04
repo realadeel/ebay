@@ -7,6 +7,9 @@ require 'ebay/types/transaction'
 require 'ebay/types/payment_hold_detail'
 require 'ebay/types/refund'
 require 'ebay/types/multi_leg_shipping_details'
+require 'ebay/types/payments_information'
+require 'ebay/types/pickup_options'
+require 'ebay/types/pickup_method_selected'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -42,6 +45,11 @@ module Ebay # :nodoc:
     #  text_node :refund_status, 'RefundStatus', :optional => true
     #  boolean_node :is_multi_leg_shipping, 'IsMultiLegShipping', 'true', 'false', :optional => true
     #  object_node :multi_leg_shipping_details, 'MultiLegShippingDetails', :class => MultiLegShippingDetails, :optional => true
+    #  object_node :monetary_details, 'MonetaryDetails', :class => PaymentsInformation, :optional => true
+    #  array_node :pickup_details, 'PickupDetails', 'PickupOptions', :class => PickupOptions, :default_value => []
+    #  object_node :pickup_method_selected, 'PickupMethodSelected', :class => PickupMethodSelected, :optional => true
+    #  text_node :seller_user_id, 'SellerUserID', :optional => true
+    #  text_node :seller_eias_token, 'SellerEIASToken', :optional => true
     class Order
       include XML::Mapping
       include Initializer
@@ -77,6 +85,11 @@ module Ebay # :nodoc:
       text_node :refund_status, 'RefundStatus', :optional => true
       boolean_node :is_multi_leg_shipping, 'IsMultiLegShipping', 'true', 'false', :optional => true
       object_node :multi_leg_shipping_details, 'MultiLegShippingDetails', :class => MultiLegShippingDetails, :optional => true
+      object_node :monetary_details, 'MonetaryDetails', :class => PaymentsInformation, :optional => true
+      array_node :pickup_details, 'PickupDetails', 'PickupOptions', :class => PickupOptions, :default_value => []
+      object_node :pickup_method_selected, 'PickupMethodSelected', :class => PickupMethodSelected, :optional => true
+      text_node :seller_user_id, 'SellerUserID', :optional => true
+      text_node :seller_eias_token, 'SellerEIASToken', :optional => true
     end
   end
 end

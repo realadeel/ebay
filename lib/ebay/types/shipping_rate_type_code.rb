@@ -7,6 +7,10 @@ module Ebay # :nodoc:
       DailyPickup = 'DailyPickup'
       StandardList = 'StandardList'
       Counter = 'Counter'
+      Discounted = 'Discounted'
+      CommercialPlus = 'CommercialPlus'
+      GoldSilver = 'GoldSilver'
+      PlatTitanium = 'PlatTitanium'
     end
   end
 end
