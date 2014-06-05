@@ -10,10 +10,8 @@ module Ebay # :nodoc:
       include Initializer
       root_element_name 'NameValueList'
       text_node :name, 'Name', :optional => true
-      text_node :value, 'Value', :optional => true
+      value_array_node :values, 'Value', :optional => true
       text_node :source, 'Source', :optional => true
     end
   end
 end
-
-

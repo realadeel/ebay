@@ -96,5 +96,3 @@ module Ebay # :nodoc:
     end
   end
 end
-
-
